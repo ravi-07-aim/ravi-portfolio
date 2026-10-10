@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ravi Narendra Nammi | AI &amp; ML Student, Portfolio</title>
+<meta name="description" content="Portfolio of Ravi Narendra Nammi, B.Tech student in Artificial Intelligence &amp; Machine Learning. Projects in animal detection and tracking, and a volunteer-matching platform.">
+<meta name="theme-color" content="#7B1230">
+<meta property="og:title" content="Ravi Narendra Nammi | Portfolio">
+<meta property="og:description" content="B.Tech student in AI &amp; ML. Projects, skills, experience and contact details.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237B1230'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='34' text-anchor='middle' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --accent:#7B1230;
+  --accent-ink:#FFFFFF;
+  --accent-soft:#F7E9ED;
+  --bg:#FFFFFF;
+  --bg-alt:#F7F5F6;
+  --surface:#FFFFFF;
+  --ink:#1C1C24;
+  --ink-2:#3E3E4A;
+  --ink-3:#5A5A67;
+  --line:#E6E1E4;
+  --chip:#F7F5F6;
+  --shadow:0 1px 2px rgba(28,28,36,.05), 0 8px 24px -12px rgba(28,28,36,.18);
+  --link:#7B1230;
+}
+:root[data-theme="dark"]{
+  --accent:#C94B6D;
+  --accent-ink:#1A0A10;
+  --accent-soft:#2A1219;
+  --bg:#141116;
+  --bg-alt:#1B171D;
+  --surface:#211C24;
+  --ink:#F3EFF1;
+  --ink-2:#CFC8CC;
+  --ink-3:#A79FA4;
+  --line:#352E37;
+  --chip:#2A242D;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+  --link:#E28AA3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --accent:#C94B6D; --accent-ink:#1A0A10; --accent-soft:#2A1219;
+    --bg:#141116; --bg-alt:#1B171D; --surface:#211C24;
+    --ink:#F3EFF1; --ink-2:#CFC8CC; --ink-3:#A79FA4; --line:#352E37; --chip:#2A242D;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+    --link:#E28AA3;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* top bar + nav */
+.topbar{height:6px;background:var(--accent)}
+header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.nav.scrolled{border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:16px}
+nav.links{display:flex;align-items:center;gap:2px}
+nav.links a{color:var(--ink-2);text-decoration:none;padding:10px 12px;font-size:15px;border-radius:8px;font-weight:500}
+nav.links a:hover{color:var(--ink);background:var(--bg-alt)}
+nav.links a.active{color:var(--accent);background:var(--accent-soft)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{background:var(--bg-alt)}
+.icon-btn svg{width:20px;height:20px}
+.menu-btn{display:none}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;border:1.5px solid transparent;font-family:inherit;transition:transform .15s, background .15s}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{transform:translateY(-1px);text-decoration:none}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--bg-alt);text-decoration:none}
+
+/* hero */
+.hero{padding:48px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:14.5px;color:var(--ink-2);width:fit-content}
+.status i{width:9px;height:9px;border-radius:50%;background:#1E9E5A;box-shadow:0 0 0 4px rgba(30,158,90,.18)}
+h1{margin:22px 0 0;font-size:clamp(42px,6.4vw,72px);line-height:1.02;letter-spacing:-.025em;font-weight:700}
+.role{margin:14px 0 0;font-size:clamp(20px,2.4vw,24px);color:var(--accent);font-weight:600}
+.lead{margin:20px 0 0;max-width:640px;font-size:19px;color:var(--ink-2)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.social{display:flex;gap:10px;margin-top:26px}
+.social a{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);background:var(--surface)}
+.social a:hover{border-color:var(--accent);color:var(--accent)}
+.social svg{width:20px;height:20px}
+.portrait{position:relative;max-width:400px;margin-left:auto;width:100%}
+.portrait .frame{aspect-ratio:1/1;border-radius:28px;overflow:hidden;border:6px solid var(--accent);box-shadow:var(--shadow);background:var(--bg-alt)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait .badge{position:absolute;left:-22px;bottom:26px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;line-height:1.25}
+.portrait .badge b{font-size:22px}
+.portrait .badge span{font-size:13.5px;color:var(--ink-3)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+.stat{padding:22px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:30px;line-height:1.1;letter-spacing:-.01em}
+.stat span{font-size:14.5px;color:var(--ink-3)}
+
+/* sections */
+section{padding:84px 0}
+section.alt{background:var(--bg-alt)}
+.sec-head{margin-bottom:38px;max-width:640px}
+h2{margin:0;font-size:clamp(28px,3.4vw,36px);line-height:1.15;letter-spacing:-.015em}
+.sec-head p{margin:12px 0 0;color:var(--ink-3)}
+.rule{width:48px;height:3px;background:var(--accent);margin-top:14px;border-radius:2px}
+
+.about{display:grid;grid-template-columns:1.6fr 1fr;gap:56px}
+.about p{margin:0 0 18px;color:var(--ink-2);max-width:640px}
+.facts{display:flex;flex-direction:column;gap:22px}
+.facts h3{margin:0 0 8px;font-size:16px;color:var(--accent)}
+.facts ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;color:var(--ink-2)}
+.facts li{padding-left:18px;position:relative}
+.facts li:before{content:"";position:absolute;left:0;top:.7em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.skills .card h3{margin:0 0 14px;font-size:16px;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:5px 12px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--chip);color:var(--ink)}
+.chip.next{background:transparent;border:1.5px dashed var(--accent)}
+.next-row{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.next-row b{font-size:15px;color:var(--ink-3)}
+
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.project{display:flex;flex-direction:column;gap:14px;padding:32px;transition:transform .2s, box-shadow .2s}
+.project:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.project .top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.pico{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.pico svg{width:26px;height:26px}
+.date{font-size:14.5px;color:var(--ink-3);padding-top:6px}
+.project h3{margin:4px 0 0;font-size:24px;line-height:1.2}
+.project p{margin:0;color:var(--ink-2)}
+.project ul{margin:0;padding-left:20px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.project .foot{margin-top:auto;padding-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.plink{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:15.5px;text-decoration:none}
+.plink svg{width:17px;height:17px}
+
+.timeline{display:grid;gap:20px}
+.exp{border-left:4px solid var(--accent);display:flex;flex-direction:column;gap:12px}
+.exp .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
+.exp h3{margin:0;font-size:22px;line-height:1.25}
+.exp ul{margin:0;padding-left:20px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.exp p{margin:0;color:var(--ink-2);max-width:760px}
+
+.edu{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.edu .card{display:flex;flex-direction:column;gap:6px;padding:28px}
+.edu h3{margin:0;font-size:22px;line-height:1.25}
+.edu .score{margin-top:10px;font-weight:600;font-size:18px}
+.edu .score small{font-weight:400;color:var(--ink-3);font-size:15px}
+
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.act{display:flex;flex-direction:column;gap:8px}
+.act .kind{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;font-size:15px}
+.act .kind svg{width:20px;height:20px}
+.act h3{margin:0;font-size:20px}
+.act p{margin:0;color:var(--ink-2);font-size:16px}
+
+.resume{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.resume .doc{max-width:380px;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.resume p{color:var(--ink-2);max-width:520px;margin:0 0 24px}
+
+/* contact */
+#contact{background:#7B1230;color:#fff}
+#contact h2,#contact p,#contact a,#contact label{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.contact-grid > div > p{margin:14px 0 0;font-size:18px;opacity:.92;max-width:430px}
+.clist{margin-top:28px;display:flex;flex-direction:column}
+.clist a,.clist div.item{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.28);text-decoration:none;font-size:17px;word-break:break-word}
+.clist > :last-child{border-bottom:1px solid rgba(255,255,255,.28)}
+.clist svg{width:20px;height:20px;flex:none;opacity:.85}
+.clist a:hover{text-decoration:underline}
+form.cform{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px}
+form.cform label{font-size:15px;font-weight:600;display:flex;flex-direction:column;gap:6px}
+form.cform input,form.cform textarea{font:inherit;font-size:16px;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.96);color:#1C1C24;width:100%}
+form.cform textarea{min-height:130px;resize:vertical}
+form.cform input:focus-visible,form.cform textarea:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.btn-light{background:#fff;color:#7B1230;border:0;width:fit-content}
+.btn-outline-light{background:transparent;color:#fff;border-color:#fff;width:fit-content}
+.btn-outline-light:hover{background:rgba(255,255,255,.14)}
+.cbox{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px;align-self:start}
+.cbox h3{margin:0;font-size:22px;color:#fff}
+.cbox p{margin:0;opacity:.92}
+.cbtns{display:flex;flex-wrap:wrap;gap:12px}
+#contact .btn-light{color:#7B1230}
+.btn-light:hover{transform:translateY(-1px)}
+.copy-hint{font-size:14px;opacity:.85;min-height:1.4em}
+footer.foot{background:#7B1230;color:rgba(255,255,255,.85);font-size:14.5px;padding:22px 0 30px;border-top:1px solid rgba(255,255,255,.2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px}
+footer a{color:#fff}
+
+.totop{position:fixed;right:20px;bottom:20px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.totop.show{opacity:1;pointer-events:auto}
+
+/* one entrance moment: the hero */
+@media (prefers-reduced-motion:no-preference){
+  .hero .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero .reveal:nth-child(2){animation-delay:.08s}
+  .hero .reveal:nth-child(3){animation-delay:.16s}
+  .hero .reveal:nth-child(4){animation-delay:.24s}
+  .hero .reveal:nth-child(5){animation-delay:.32s}
+  .hero .reveal:nth-child(6){animation-delay:.4s}
+  .portrait{opacity:0;animation:rise .8s .2s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (max-width:960px){
+  .hero-grid,.about,.resume,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .portrait{margin:0 auto 0 0;max-width:320px}
+  .portrait .badge{left:auto;right:-8px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .skills,.acts{grid-template-columns:repeat(2,1fr)}
+  .projects,.edu{grid-template-columns:1fr}
+  .menu-btn{display:grid}
+  nav.links{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:8px 16px 16px;display:none}
+  nav.links.open{display:flex}
+  nav.links a{padding:14px 12px}
+}
+@media (max-width:600px){
+  body{font-size:16.5px}
+  section{padding:64px 0}
+  .skills,.acts{grid-template-columns:1fr}
+  .project{padding:24px}
+  .stat{padding:18px}
+  .stat b{font-size:26px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Ravi Narendra Nammi, home"><span class="mark">R</span>Ravi Narendra Nammi</a>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#activity">Activities</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="links" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="status reveal"><i aria-hidden="true"></i>Open to AI &amp; ML internships and projects</div>
+        <h1 class="reveal">Ravi Narendra Nammi</h1>
+        <p class="role reveal">B.Tech student, Artificial Intelligence &amp; Machine Learning</p>
+        <p class="lead reveal">I build things that solve real problems, from a model that tracks animals across video frames to a platform that connects volunteers with the events that need them. Data structures, Java and applied AI are where I spend most of my time.</p>
+        <div class="cta reveal">
+          <a class="btn btn-primary" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Get in touch</a>
+        </div>
+        <div class="social reveal">
+          <a href="https://github.com/ravi-07-aim" aria-label="GitHub profile" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+          <a href="https://www.linkedin.com/in/ravi-narendra-nammi-ba7266335" aria-label="LinkedIn profile" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.83v1.54h.06c.53-1 1.84-2.07 3.79-2.07 4.05 0 4.8 2.67 4.8 6.13V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4z"/></svg></a>
+          <a href="mailto:ravinarendra27@gmail.com" aria-label="Send an email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats" aria-label="Highlights">
+      <div class="stat"><b>7.98</b><span>CGPA, B.Tech AI &amp; ML</span></div>
+      <div class="stat"><b>94.1%</b><span>Intermediate, MPC</span></div>
+      <div class="stat"><b>2</b><span>Projects built</span></div>
+      <div class="stat"><b>2</b><span>Competitions entered</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>About</h2><div class="rule"></div></div>
+    <div class="about">
+      <div>
+        <p>I'm a B.Tech student in Artificial Intelligence &amp; Machine Learning at Sri Vasavi Engineering College. I like building projects that solve real problems, and I enjoy learning new technologies and working with a team.</p>
+        <p>Data structures and algorithms and Java are my main interests. I enjoy problem solving and want to bring that discipline to my AI and ML work. Outside class I moderate and design for the Sri Vasavi Alumni Network (SVAN).</p>
+        <p>I take part in coding challenges and tech communities, and I'm always looking for the next useful thing to build.</p>
+      </div>
+      <div class="facts">
+        <div><h3>Interests</h3>
+          <ul><li>Problem solving</li><li>Exploring AI technologies</li><li>Web development</li><li>Hackathons &amp; tech events</li></ul></div>
+        <div><h3>Languages</h3>
+          <ul><li>English</li><li>Telugu (native)</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><h2>Skills</h2><div class="rule"></div></div>
+    <div class="skills">
+      <div class="card"><h3>Programming</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">SQL</span></div></div>
+      <div class="card"><h3>Web development</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">React</span></div></div>
+      <div class="card"><h3>AI / ML</h3><div class="chips"><span class="chip">Machine Learning</span><span class="chip">Natural Language Processing</span></div></div>
+      <div class="card"><h3>Databases</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">SQLite</span></div></div>
+      <div class="card"><h3>Tools</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Linux</span><span class="chip">Jupyter Notebook</span></div></div>
+      <div class="card"><h3>Design</h3><div class="chips"><span class="chip">Poster design</span><span class="chip">Thumbnail design</span></div></div>
+    </div>
+    <div class="next-row"><b>Learning next</b><span class="chip next">Deep Learning</span><span class="chip next">Reinforcement Learning</span><span class="chip next">LangChain</span></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Projects</h2><div class="rule"></div><p>Two things I've built, one in applied AI and one on the web.</p></div>
+    <div class="projects">
+      <article class="card project">
+        <div class="top">
+          <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/></svg></div>
+          <div class="date">2024 – Present</div>
+        </div>
+        <h3>AniRadar</h3>
+        <p>AI/ML based animal detection and tracking system designed to assist in monitoring animal movements and behavior.</p>
+        <ul>
+          <li>Built a model to detect and classify animals from images.</li>
+          <li>Implemented tracking to monitor animal movement across frames.</li>
+          <li>Aimed at aiding wildlife monitoring and conservation efforts.</li>
+        </ul>
+        <div class="foot">
+          <div class="chips"><span class="chip">Detection</span><span class="chip">Classification</span><span class="chip">Tracking</span></div>
+          <a class="plink" href="https://github.com/ravi-07-aim" target="_blank" rel="noopener">View on GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="top">
+          <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9-9.2C1.8 8.2 4 5 7.2 5c1.9 0 3.2 1 4.8 3 1.6-2 2.9-3 4.8-3C20 5 22.2 8.2 21 11.8 19 16.6 12 21 12 21z"/></svg></div>
+          <div class="date">2024</div>
+        </div>
+        <h3>VolunteerMatch</h3>
+        <p>Web platform that connects volunteers with organizations and events that need help.</p>
+        <ul>
+          <li>Allows organizations to post opportunities and manage applications.</li>
+          <li>Enables volunteers to discover and apply for events based on interests.</li>
+          <li>Built using a responsive design for a smooth user experience.</li>
+        </ul>
+        <div class="foot">
+          <div class="chips"><span class="chip">MERN stack</span><span class="chip">Supabase</span><span class="chip">Responsive design</span></div>
+          <a class="plink" href="https://github.com/ravi-07-aim" target="_blank" rel="noopener">View on GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><h2>Experience</h2><div class="rule"></div></div>
+    <div class="timeline">
+      <article class="card exp">
+        <div class="row"><h3>Moderator and Designer, SVAN (Sri Vasavi Alumni Network)</h3><div class="date">2024 – Present</div></div>
+        <p>Serving as a moderator on SVAN, a platform that connects current students with alumni for mentorship, guidance and networking.</p>
+        <ul>
+          <li>Facilitate meaningful interactions between students and alumni.</li>
+          <li>Ensure a positive and supportive community environment.</li>
+          <li>Organize and manage discussions and events on the platform.</li>
+          <li>Design thumbnails and posters for SVAN.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Education</h2><div class="rule"></div></div>
+    <div class="edu">
+      <article class="card">
+        <div class="date">2023 – Present</div>
+        <h3>Sri Vasavi Engineering College</h3>
+        <div>B.Tech, Artificial Intelligence &amp; Machine Learning</div>
+        <div class="score">CGPA 7.98 <small>(till 4th semester)</small></div>
+      </article>
+      <article class="card">
+        <div class="date">2014 – 2018</div>
+        <h3>Tirumula Jr Kalasala</h3>
+        <div>Intermediate, MPC</div>
+        <div class="score">94.1%</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activity">
+  <div class="wrap">
+    <div class="sec-head"><h2>Competitions and workshops</h2><div class="rule"></div></div>
+    <div class="acts">
+      <article class="card act">
+        <div class="kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>Competition</div>
+        <h3>Squid Game 2</h3>
+        <p>Participated in the college-level technical competition.</p>
+      </article>
+      <article class="card act">
+        <div class="kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>Hackathon</div>
+        <h3>Hackelerate</h3>
+        <p>Participated in the hackathon.</p>
+      </article>
+      <article class="card act">
+        <div class="kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Workshop</div>
+        <h3>PixelX</h3>
+        <p>Hands-on workshop to build practical skills and gain industry exposure.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p>I'm open to ML and AI roles, and happy to talk about projects or collaboration.</p>
+      <div class="clist">
+        <a href="mailto:ravinarendra27@gmail.com" id="emailLink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>ravinarendra27@gmail.com</a>
+        <a href="tel:+919392776001">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>9392776001</a>
+        <a href="https://www.linkedin.com/in/ravi-narendra-nammi-ba7266335" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.83v1.54h.06c.53-1 1.84-2.07 3.79-2.07 4.05 0 4.8 2.67 4.8 6.13V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4z"/></svg>linkedin.com/in/ravi-narendra-nammi-ba7266335</a>
+        <a href="https://github.com/ravi-07-aim" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>github.com/ravi-07-aim</a>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>BVRM, West Godavari, Andhra Pradesh, India</div>
+      </div>
+    </div>
+    <div class="cform cbox">
+      <h3>Prefer to write an email?</h3>
+      <p>Open a new message in Gmail, or copy my address and use any email app.</p>
+      <div class="cbtns">
+        <a class="btn btn-light" href="https://mail.google.com/mail/?view=cm&fs=1&to=ravinarendra27@gmail.com&su=Hello%20Ravi" target="_blank" rel="noopener">Write in Gmail</a>
+        <button class="btn btn-outline-light" type="button" id="copyEmail">Copy email address</button>
+      </div>
+      <div class="copy-hint" id="hint" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><span>© 2026 Ravi Narendra Nammi</span><span>Built with HTML and CSS</span></div>
+</footer>
+
+<button class="icon-btn totop" id="totop" aria-label="Back to top" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  // theme
+  try{var saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  // mobile menu
+  var menu=document.getElementById('menu'), links=document.getElementById('links');
+  menu.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    menu.setAttribute('aria-expanded',open);
+  });
+  links.addEventListener('click',function(e){ if(e.target.tagName==='A'){links.classList.remove('open');menu.setAttribute('aria-expanded','false');} });
+  // header border + back to top
+  var nav=document.getElementById('nav'), totop=document.getElementById('totop');
+  function onScroll(){
+    var y=window.scrollY;
+    nav.classList.toggle('scrolled',y>8);
+    totop.classList.toggle('show',y>700);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  totop.addEventListener('click',function(){window.scrollTo({top:0});});
+  // scroll spy
+  var anchors=[].slice.call(links.querySelectorAll('a'));
+  var map={}; anchors.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          anchors.forEach(function(a){a.classList.remove('active');a.removeAttribute('aria-current');});
+          var a=map[en.target.id]; if(a){a.classList.add('active');a.setAttribute('aria-current','true');}
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el);});
+  }
+  // copy email
+  var cp=document.getElementById('copyEmail'), hint=document.getElementById('hint');
+  cp.addEventListener('click',function(){
+    var addr='ravinarendra27@gmail.com';
+    function done(ok){hint.textContent=ok?'Copied: '+addr:'Copy failed. Email me at '+addr;}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(function(){done(true);},function(){done(false);});
+    }else{
+      var t=document.createElement('textarea');t.value=addr;document.body.appendChild(t);t.select();
+      var ok=false;try{ok=document.execCommand('copy');}catch(e){}
+      document.body.removeChild(t);done(ok);
+    }
+  });
+})();
+</script>
+</body>
+</html>
